@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
+import Header from './Header';
 import SEO from './SEO';
 
 type Props = {
@@ -10,7 +11,7 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => {
   return (
     <>
       <SEO title={title} />
-      <header></header>
+      <Header />
       {children}
       <footer></footer>
     </>

@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 const Landing: NextPage = () => {
   return (
     <Layout>
-      <div className="w-screen h-screen bg-slate-700">
+      <div className="h-screen min-h-[1000px]">
         <h3>Landing Page</h3>
       </div>
     </Layout>
