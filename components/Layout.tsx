@@ -12,7 +12,9 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => {
     <>
       <SEO title={title} />
       <Header />
-      {children}
+      <main role="main" className="relative z-[5] block">
+        {children}
+      </main>
       <footer></footer>
     </>
   );

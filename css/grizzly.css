@@ -1,0 +1,27 @@
+@import url('./_normalize.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .hero-bg {
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(81, 122, 222, 0)), to(#2a3289));
+        background-image: linear-gradient(180deg, rgba(81, 122, 222, 0), #2a3289);
+    }
+
+    .section {
+        @apply flex items-center justify-center relative
+    }
+
+    .section-grid {
+        @apply grid auto-cols-one grid-cols-two grid-rows-two gap-y-4 gap-x-4
+    }
+
+    .content-grid {
+        @apply w-full items-center gap-y-8 gap-x-8 auto-rows-auto grid-cols-1
+    }
+
+    .block-content {
+        @apply relative flex flex-col justify-center items-center w-full container my-20 mx-8
+    }
+}

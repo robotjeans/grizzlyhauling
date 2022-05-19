@@ -1,0 +1,18 @@
+.header {
+    @apply fixed top-0 left-0 w-full z-[15] flex items-center justify-between py-4 px-16 md:px-20 pointer-events-none;
+    transition: transform 0.5s, background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.show_bg {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.hide {
+    transform: translateY(-100%);
+}
+
+.button {
+    @apply block w-full rounded-md border-white border-2 px-5 py-3 bg-transparent text-base font-medium text-white sm:px-10 pointer-events-auto;
+}
+
+     

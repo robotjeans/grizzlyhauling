@@ -18,7 +18,11 @@ module.exports = {
 
       xl: '1280px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'welcome-landing': 'url(/img/welcome_house.jpg)',
+      },
+    },
   },
   plugins: [],
 };
