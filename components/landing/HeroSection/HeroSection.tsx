@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import classes from './HeroSection.module.css';
+import SubscribeForm from '../../forms/SubscribeForm';
 
 type HeroData = {
   heading: string;
@@ -27,10 +28,35 @@ const HeroSection: FunctionComponent = () => {
   }, []);
 
   return (
-    <section id="landing" className={clsx(classes.hero_section)}>
-      <div className="w-full h-full bg-red-600">
-        <div className="container">
-          <div className="flex items-center flex-wrap"></div>
+    <section
+      id="landing"
+      className=" relative z-[1] flex items-center h-[800px] overflow-hidden bg-red-600"
+    >
+      <div className="container my-0 mx-auto mt-[-100px]">
+        <div className="flex flex-wrap mx-[-15px] items-center">
+          <div className="w-full px-4 flex-[0 0 100%] max-w-full md:flex-[0 0 58.333333%] md:max-w-[58.333333%]">
+            <div>
+              <h1 className="mt-0 block m-0">
+                <span className="text-white block text-9xl font-bangers font-bold">
+                  Grizzly
+                </span>
+              </h1>
+              {/*
+                <span className="block text-white text-5xl tracking-wide font-poppins font-bold">
+                  Hauling & Removal
+                </span>
+              </h1>
+              <p className="mb-6 mt-6 text-black text-xl">
+                Virginia Beach hauling & junk removal services.
+                <br />
+                We do the heavy lifting, so you can focus on your latest
+                project.
+  </p>*/}
+            </div>
+          </div>
+          <div className="w-full px-4 flex-[0 0 100%] max-w-full md:flex-[0 0 58.333333%] md:max-w-[58.333333%]">
+            <div></div>
+          </div>
         </div>
       </div>
       <svg className={clsx(classes.hero_wave)} viewBox="0 0 1920 310">
@@ -47,3 +73,23 @@ const HeroSection: FunctionComponent = () => {
 };
 
 export default HeroSection;
+
+/**
+ * 
+ *  <div className={clsx(classes.hero_grid)}>
+          <div className="block row-start-span-one row-end-span-one col-start-span-one col-end-span-one pl-0 pt-[100px]">
+            <h1 className="w-[482px] mt-0 mb-6">
+              <span className="text-white block text-9xl font-bangers font-bold">
+                Grizzly
+              </span>
+              <span className="text-white block text-7xl font-poppins font-extrabold">
+                HAULING
+              </span>
+            </h1>
+            <p className="w-[480px] mb-0 text-black text-2xl">
+              Virginia Beach hauling & junk removal services. We do the heavy
+              lifting, so you can focus on your latest project.
+            </p>
+          </div>
+        </div>
+ */

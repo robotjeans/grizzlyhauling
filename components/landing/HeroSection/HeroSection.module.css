@@ -1,5 +1,5 @@
 .hero_section {
-    @apply relative z-[1] flex items-center h-[800px] overflow-hidden bg-[url('/img/welcome_house.jpg')] bg-cover bg-center bg-no-repeat;
+    @apply relative z-[1] flex items-center h-[800px] overflow-hidden;
 }
 
 .hero_wave {
@@ -7,4 +7,8 @@
     background-color: rgba(255, 255, 255, 0);
     transform-style: preserve-3d;
     transform-origin: center;
+}
+
+.hero_grid {
+    @apply grid-cols-two grid-rows-zero relative w-full h-auto justify-items-stretch grid auto-cols-one grid-cols-two grid-rows-two gap-y-4 gap-x-4;
 }

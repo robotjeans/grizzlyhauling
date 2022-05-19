@@ -1,7 +1,32 @@
-@import url('./_normalize.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Bangers-Regular';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''), url('/fonts/Bangers/Bangers-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''), url('/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
 @layer components {
     .hero-bg {
