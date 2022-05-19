@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'
 import { FunctionComponent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import classes from './Header.module.css';
@@ -30,7 +31,14 @@ const Header: FunctionComponent = () => {
         <div className="mr-12 lg:justify-center md:flex">
           <div className="inline-flex items-center h-16 md:justify-between md:h-20">
             <Link href="/">
-              <a className="block w-32 contain">Link A</a>
+              <a className="block w-32 contain">
+              <Image
+                  src="/img/logo.svg"
+                  alt="Grizzly Hauling Logo"
+                  width={200}
+                  height={120}
+                />
+              </a>
             </Link>
           </div>
         </div>
