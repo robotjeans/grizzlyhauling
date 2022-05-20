@@ -6,10 +6,8 @@ import Layout from '../components/Layout';
 const Landing: NextPage = () => {
   return (
     <Layout>
-      <div className="h-screen min-h-[1000px]">
-        <HeroSection />
-        <StatsSection />
-      </div>
+      <HeroSection />
+      <StatsSection />
     </Layout>
   );
 };

@@ -2,19 +2,36 @@
     @apply relative z-[1] flex items-center h-[800px] overflow-hidden;
 }
 
-.hero_heading_block h1:first-of-type {
+.hero_text {
+    @apply block;
+}
+
+.hero_text span:first-of-type {
     @apply text-secondary block font-bangers font-bold;
     font-size: 128px;
 }
 
-.hero_heading_block h2:last-of-type {
+.hero_text span:last-of-type {
     @apply text-white block font-poppins font-bold ml-20;
     font-size: 96px;
     margin-top: -40px;
 }
 
+.button {
+    @apply block rounded-md border-primary text-center border-2 px-5 py-3 bg-secondary text-base font-medium text-primary sm:px-10 pointer-events-auto;
+    background: linear-gradient(to left, #FED455 50%,#F22F34 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+
+}
+
+.button:hover {
+    @apply border-secondary text-secondary;
+    background-position: left;
+}
+
 .hero_wave {
-    @apply w-screen h-auto text-white absolute right-0 left-0 bottom-[-1px] z-10 pointer-events-none;
+    @apply w-screen h-auto text-white absolute right-0 left-0 bottom-[153px] z-10 pointer-events-none;
     background-color: rgba(255, 255, 255, 0);
     transform-style: preserve-3d;
     transform-origin: center;

@@ -12,7 +12,15 @@
 }
 
 .button {
-    @apply block w-full rounded-md border-white border-2 px-5 py-3 bg-transparent text-base font-medium text-white sm:px-10 pointer-events-auto;
+    @apply block rounded-md border-white text-center border-2 px-5 py-3 bg-transparent text-base font-medium text-white sm:px-10 pointer-events-auto;
+    background: linear-gradient(to left, #F22F34 50%, #FED455 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+    
 }
 
+.button:hover {
+    @apply border-primary text-primary;
+    background-position: left;
+}
      
