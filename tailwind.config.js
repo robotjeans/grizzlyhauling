@@ -5,6 +5,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    colors: {
+      primary: '#F22F34',
+      secondary: '#FED455',
+      black: '#050505',
+      white: '#FFFFFF',
+      transparent: 'transparent',
+    },
     container: {
       center: true,
       padding: '1.5rem',

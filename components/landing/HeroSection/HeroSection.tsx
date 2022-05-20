@@ -30,17 +30,18 @@ const HeroSection: FunctionComponent = () => {
   return (
     <section
       id="landing"
-      className=" relative z-[1] flex items-center h-[800px] overflow-hidden bg-red-600"
+      className=" relative z-[1] flex items-center h-[800px] overflow-hidden bg-primary"
     >
       <div className="container my-0 mx-auto mt-[-100px]">
         <div className="flex flex-wrap mx-[-15px] items-center">
           <div className="w-full px-4 flex-[0 0 100%] max-w-full md:flex-[0 0 58.333333%] md:max-w-[58.333333%]">
             <div>
-              <h1 className="mt-0 block m-0">
-                <span className="text-white block text-9xl font-bangers font-bold">
-                  Grizzly
-                </span>
-              </h1>
+              <div className={classes.hero_heading_block}>
+                <h1>Grizzly</h1>
+                <h2>
+                  Hauling<i className="text-secondary text-9xl font-sans">.</i>
+                </h2>
+              </div>
               {/*
                 <span className="block text-white text-5xl tracking-wide font-poppins font-bold">
                   Hauling & Removal
