@@ -2,6 +2,8 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import classes from './HeroSection.module.css';
 import SubscribeForm from '../../forms/SubscribeForm';
+import BookingModal from '@/components/booking/BookingModal';
+import { useModal } from '@/hooks/useModal';
 
 type HeroData = {
   heading: string;
@@ -22,6 +24,7 @@ const initData = {
 
 const HeroSection: FunctionComponent = () => {
   const [data, setData] = useState<HeroData | null>(null);
+  const { isOpen, toggleOpen } = useModal();
 
   useEffect(() => {
     setData(initData);
@@ -40,7 +43,9 @@ const HeroSection: FunctionComponent = () => {
                 </span>
               </h1>
               <div className="w-full flex justify-end">
-                <button className={clsx(classes.button)}>Book Now</button>
+                <button onClick={toggleOpen} className={clsx(classes.button)}>
+                  Book Now
+                </button>
               </div>
             </div>
           </div>
@@ -85,6 +90,7 @@ const HeroSection: FunctionComponent = () => {
         </div>
       </div>
       */}
+      <BookingModal open={isOpen} toggle={toggleOpen} />
     </section>
   );
 };

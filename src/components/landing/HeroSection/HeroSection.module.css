@@ -1,7 +1,13 @@
 .hero_section {
     @apply relative z-[1] flex items-center h-[800px] overflow-hidden;
+    background: linear-gradient(to top, #FED455 50%, #F22F34 50%) bottom;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
 
+.hero_section:hover {
+    background-position: top;
+}
 .hero_text {
     @apply block;
 }
