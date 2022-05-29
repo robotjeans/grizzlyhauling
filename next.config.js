@@ -1,10 +1,16 @@
-/** @type {import('next').NextConfig} */
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({ path: './.env' });
+}
 
-const nextConfig = {
-  reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
+  typescript: {
+    ignoreBuildErrors: true,
   },
-};
-
-module.exports = nextConfig;
+  images: {
+    domains: [process.env.UPLOADS_DOMAIN ?? 'localhost'],
+  },
+});

@@ -30,9 +30,6 @@
         "./src/*"
       ]
     },
-    "types": [
-      "vitest/globals"
-    ],
     "incremental": true
   },
   "include": [

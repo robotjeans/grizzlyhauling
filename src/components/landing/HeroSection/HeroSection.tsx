@@ -1,9 +1,8 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import classes from './HeroSection.module.css';
-import SubscribeForm from '../../forms/SubscribeForm';
-import BookingModal from '@/components/booking/BookingModal';
 import { useModal } from '@/hooks/useModal';
+import Modal from '@/components/ui/Modal';
 
 type HeroData = {
   heading: string;
@@ -24,7 +23,7 @@ const initData = {
 
 const HeroSection: FunctionComponent = () => {
   const [data, setData] = useState<HeroData | null>(null);
-  const { isOpen, toggleOpen } = useModal();
+  const { isOpen, toggleOpen, toggleClose } = useModal();
 
   useEffect(() => {
     setData(initData);
@@ -90,7 +89,9 @@ const HeroSection: FunctionComponent = () => {
         </div>
       </div>
       */}
-      <BookingModal open={isOpen} toggle={toggleOpen} />
+      <Modal isOpen={isOpen} toggleClose={toggleClose}>
+        <div>Modal</div>
+      </Modal>
     </section>
   );
 };
