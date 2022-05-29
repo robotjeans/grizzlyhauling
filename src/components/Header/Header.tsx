@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FunctionComponent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import classes from './Header.module.css';
+import { Container } from './Header.style';
 
 const Header: FunctionComponent = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -21,13 +22,21 @@ const Header: FunctionComponent = () => {
   }, []);
 
   return (
-    <header
-      className={clsx(classes.header, {
-        [classes.hide]: scrolled,
-        [classes.show_bg]: scrolled,
-      })}
-    >
-      <div className="flex justify-between w-full h-full">
+    <header>
+      <Container show={scrolled}>
+        <div className="flex">Menu</div>
+        <Link href="/">
+          <a className="flex w-[0.89rem] h-[0.22rem] mr-[-0.7rem]">
+            <Image
+              src="/img/logo.svg"
+              alt="Grizzly Hauling Logo"
+              layout="fill"
+            />
+          </a>
+        </Link>
+        <Link href="/">
+          <a className="p-[0.1rem] rounded border border-solid border-sec"></a>
+        </Link>
         <div className="mr-12 lg:justify-center md:flex">
           <div className="inline-flex items-center h-16 md:justify-between md:h-20">
             <Link href="/">
@@ -51,13 +60,6 @@ const Header: FunctionComponent = () => {
               </span>
             </a>
           </Link>
-          <button
-            type="button"
-            className={clsx(classes.button)}
-            aria-label="Book Now"
-          >
-            Book Now
-          </button>
         </div>
         <div className="z-50 flex items-center justify-center lg:hidden">
           <button className="z-50 flex items-center cursor-pointer focus:outline-none tg-hamburger">
@@ -67,7 +69,7 @@ const Header: FunctionComponent = () => {
             </div>
           </button>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };
