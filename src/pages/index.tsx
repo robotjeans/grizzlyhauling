@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
-import HeroSection from '../components/landing/HeroSection';
-import StatsSection from '../components/landing/StatsSection';
+import HeroSection from '../components/home/HeroSection';
 import Layout from '../components/Layout';
 
 const Landing: NextPage = () => {
