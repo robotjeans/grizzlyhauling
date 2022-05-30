@@ -46,17 +46,27 @@ function Header() {
       <div className="container h-24">
         <div className="flex flex-nowrap justify-between items-center my-0 mx-auto w-full">
           <Link href="/">
-            <a aria-label="link to homepage">
+            <a aria-label="link to homepage" className="flex">
               <div
                 className={clsx(
                   'relative bg-center bg-no-repeat cursor-pointer w-16 h-16 transition-all ease-in-out duration-200',
                   scrolled ? 'bg-color-red' : 'bg-transparent'
                 )}
                 style={{
-                  backgroundImage: 'url(/img/logo-badge.png)',
-                  backgroundSize: '36%',
+                  backgroundImage: 'url(/img/logo.png)',
+                  backgroundSize: '100%',
                 }}
-              ></div>
+              >
+                <Image
+                  src="/img/logo_text.svg"
+                  alt="Grizzly Hauling Logo"
+                  className={clsx(
+                    scrolled ? 'text-color-red' : 'text-color-black'
+                  )}
+                  width={64}
+                  height={32}
+                />
+              </div>
             </a>
           </Link>
 
