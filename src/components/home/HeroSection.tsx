@@ -1,7 +1,23 @@
+import clsx from 'clsx';
+
 function HeroSection() {
   return (
-    <section className="h-screen relative">
-      <div className="bg-offwhite h-full w-full z-[1]"></div>
+    <section className="h-screen relative bg-offwhite">
+      <div className="container h-full mx-auto my-0">
+        <div className="relative flex h-full justify-between items-center">
+          <div className="flex w-[36.33333%] flex-col flex-start">
+            <h1 className={clsx('block')}>
+              <span className="block text-secondary font-bangers font-bold text-9xl">
+                Grizzly
+              </span>
+              <span className="block text-black font-poppins font-bold ml-20 -mt-10 text-8xl">
+                Hauling<i className="text-secondary font-sans text-7xl">.</i>
+              </span>
+            </h1>
+            <div className="w-full flex justify-end"></div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
