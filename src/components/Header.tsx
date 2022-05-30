@@ -4,6 +4,22 @@ import clsx from 'clsx';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 
+/**
+ * MOCK Header DATA
+ */
+
+const data = {
+  header: {
+    header_logo: '/img/logo_badge.png',
+    menu_links: [
+      { key: 'services' },
+      { key: 'about' },
+      { key: 'faqs' },
+      { key: 'contact' },
+    ],
+  },
+};
+
 function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -23,25 +39,55 @@ function Header() {
   return (
     <header
       className={clsx(
-        'fixed px-0 top-0 z-50 w-full py-2 md:px-6 transition-all ease-in-out duration-300',
-        scrolled ? 'md:py-1 bg-white' : 'md:py-4 bg-transparent'
+        'flex flex-nowrap items items-center content-start w-full fixed top-0 left-0 z-[4444] will-change-transform transition-all ease-in-out duration-300',
+        scrolled ? 'bg-color-white' : 'bg-transparent'
       )}
     >
-      <div className="flex justify-between items-center">
-        <div className="flex items-center">
+      <div className="container h-24">
+        <div className="flex flex-nowrap justify-between items-center my-0 mx-auto w-full">
           <Link href="/">
-            <a
-              aria-label="link to homepage"
-              className="absolute top-0 z-50 w-24 md:w-[10rem]"
-            >
-              <img
-                src="/img/logo-badge.png"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                alt="Header Logo"
-              />
+            <a aria-label="link to homepage">
+              <div
+                className={clsx(
+                  'relative bg-center bg-no-repeat cursor-pointer w-16 h-16 transition-all ease-in-out duration-200',
+                  scrolled ? 'bg-color-red' : 'bg-transparent'
+                )}
+                style={{
+                  backgroundImage: 'url(/img/logo-badge.png)',
+                  backgroundSize: '36%',
+                }}
+              ></div>
             </a>
           </Link>
+
+          <nav className="flex flex-shrink-0 items-center">
+            <ul className="flex items-center justify-start flex-1 list-reset lg:flex">
+              {data.header.menu_links.map(({ key }) => (
+                <li key={key} className="mr-2">
+                  <Link href={`/${key}`}>
+                    <a
+                      aria-label="services"
+                      className="inline-block p-2 capitalize transition-colors ease-in-out duration-350 text-color-black font-semibold"
+                    >
+                      <span className="nav-link">{key}</span>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Button className="ml-6">Book Now</Button>
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export default Header;
+
+/**
+ *  <div className="flex justify-between items-center">
+        <div className="flex items-center">
           <div className="hidden md:flex md:h-24">
             <div className="hidden w-full pt-2 ml-32 pl-14 lg:flex lg:w-auto lg:pt-0">
               <ul className='flex items-center justify-end flex-1 list-reset lg:flex"'>
@@ -112,8 +158,4 @@ function Header() {
           </button>
         </div>
       </div>
-    </header>
-  );
-}
-
-export default Header;
+ */

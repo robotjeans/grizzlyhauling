@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 function HeroSection() {
   return (
-    <section className="h-screen relative bg-offwhite">
+    <section className="h-screen relative bg-color-white">
       <div className="container h-full mx-auto my-0">
         <div className="relative flex h-full justify-between items-center">
           <div className="flex w-[36.33333%] flex-col flex-start">
