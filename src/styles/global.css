@@ -26,10 +26,27 @@
 }
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
-  box-sizing: border-box;
-  height: 100%;
+  font-family: Mabry Pro, system-ui, -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0a2533;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }

@@ -3,6 +3,10 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
+import LogoBlock from './shared/LogoBlock';
+import { useModal } from '@/hooks/useModal';
+import Modal from './ui/Modal';
+import ButtonLink from './ui/ButtonLink';
 
 /**
  * MOCK Header DATA
@@ -21,12 +25,14 @@ const data = {
 };
 
 function Header() {
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const { toggleOpen, toggleClose, isOpen } = useModal();
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () =>
-        setScrolled(window.pageYOffset > 112)
+        setIsScrolled(window.pageYOffset > 264)
       );
     }
   };
@@ -37,59 +43,53 @@ function Header() {
   }, []);
 
   return (
-    <header
-      className={clsx(
-        'flex flex-nowrap items items-center content-start w-full fixed top-0 left-0 z-[4444] will-change-transform transition-all ease-in-out duration-300',
-        scrolled ? 'bg-color-white' : 'bg-transparent'
-      )}
-    >
-      <div className="container h-24">
-        <div className="flex flex-nowrap justify-between items-center my-0 mx-auto w-full">
-          <Link href="/">
-            <a aria-label="link to homepage" className="flex">
-              <div
-                className={clsx(
-                  'relative bg-center bg-no-repeat cursor-pointer w-16 h-16 transition-all ease-in-out duration-200',
-                  scrolled ? 'bg-color-red' : 'bg-transparent'
-                )}
-                style={{
-                  backgroundImage: 'url(/img/logo.png)',
-                  backgroundSize: '100%',
-                }}
-              >
+    <div className="relative h-auto">
+      <header
+        className={clsx(
+          'z-50 text-base flex items-center fixed top-0 left-0 w-full h-[70px] md:h-[122px]',
+          isScrolled ? 'bg-color-white' : 'bg-transparent'
+        )}
+      >
+        <div className="container flex items-center justify-between text-base align-center">
+          <div className="flex-auto">
+            <Link href="/">
+              <a>
                 <Image
                   src="/img/logo_text.svg"
-                  alt="Grizzly Hauling Logo"
-                  className={clsx(
-                    scrolled ? 'text-color-red' : 'text-color-black'
-                  )}
-                  width={64}
-                  height={32}
+                  alt="Grizzly Hauling"
+                  width={48}
+                  height={48}
                 />
-              </div>
-            </a>
-          </Link>
-
-          <nav className="flex flex-shrink-0 items-center">
-            <ul className="flex items-center justify-start flex-1 list-reset lg:flex">
-              {data.header.menu_links.map(({ key }) => (
-                <li key={key} className="mr-2">
-                  <Link href={`/${key}`}>
-                    <a
-                      aria-label="services"
-                      className="inline-block p-2 capitalize transition-colors ease-in-out duration-350 text-color-black font-semibold"
-                    >
-                      <span className="nav-link">{key}</span>
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Button className="ml-6">Book Now</Button>
+              </a>
+            </Link>
+          </div>
+          <nav className="justify-center flex-auto hidden -ml-6 font-semibold md:flex align-center">
+            {data.header.menu_links.map(({ key }) => (
+              <li key={key} className="pl-6 first-of-type:pl-0">
+                <Link href={`/${key}`}>
+                  <a
+                    aria-label="services"
+                    className=" capitalize hover:opacity-75"
+                  >
+                    <span className="nav-link">{key}</span>
+                  </a>
+                </Link>
+              </li>
+            ))}
           </nav>
+          <div className="items-center justify-end hidden space-x-4 lg:flex">
+            <ButtonLink href="tel:7579937283">(757) 993-7283</ButtonLink>
+            <div className="flex items-baseline space-x-4"></div>
+            <Button variant="secondary" onClick={toggleOpen}>
+              Book Now
+            </Button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <Modal isOpen={isOpen} toggleClose={toggleClose}>
+        <div>Modal</div>
+      </Modal>
+    </div>
   );
 }
 

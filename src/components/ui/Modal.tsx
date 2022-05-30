@@ -39,7 +39,7 @@ function Modal({ isOpen, toggleClose, children }: Props) {
   const modalComponent = (
     <motion.div
       className={clsx(
-        'flex justify-center items-center fixed top-0 right-0 bottom-0 left-0 overflow-hidden min-h-full h-auto bg-black bg-opacity-75',
+        'flex justify-center items-center fixed top-0 right-0 bottom-0 left-0 overflow-hidden min-h-full h-auto bg-color-black bg-opacity-75',
         isOpen && 'z-[4444]'
       )}
       onClick={toggleClose}
@@ -49,11 +49,11 @@ function Modal({ isOpen, toggleClose, children }: Props) {
     >
       <div
         onClick={toggleClose}
-        className="absolute top-0 right-0 w-16 h-16 cursor-pointer z-[1] transition-all ease-in-out duration-300 bg-offwhite"
+        className="absolute top-0 right-0 w-16 h-16 cursor-pointer z-[1] transition-all ease-in-out duration-300 bg-color-white"
       ></div>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="inline-block max-w-full w-[650px] p-12 m-[auto 0] bg-offwhite"
+        className="inline-block max-w-full w-[650px] p-12 m-[auto 0] bg-color-white"
         variants={dropIn}
         initial="hidden"
         animate="visible"

@@ -1,20 +1,22 @@
 import clsx from 'clsx';
+import SubscribeForm from '@/components/shared/SubsriberForm';
 
 function HeroSection() {
   return (
-    <section className="h-screen relative bg-color-white">
+    <section className="h-screen p-0 w-full relative bg-color-red">
       <div className="container h-full mx-auto my-0">
         <div className="relative flex h-full justify-between items-center">
           <div className="flex w-[36.33333%] flex-col flex-start">
-            <h1 className={clsx('block')}>
+            <h1 className={clsx('block text-center')}>
               <span className="block text-secondary font-bangers font-bold text-9xl">
                 Grizzly
               </span>
-              <span className="block text-black font-poppins font-bold ml-20 -mt-10 text-8xl">
-                Hauling<i className="text-secondary font-sans text-7xl">.</i>
+              <span className="block w-[76%] m-auto h-2 bg-color-slate"></span>
+              <span className="block text-color-slate uppercase tracking-widest mt-3 font-poppins font-bold text-6xl">
+                Hauling
               </span>
             </h1>
-            <div className="w-full flex justify-end"></div>
+            <div className="w-full flex justify-end mt-6"></div>
           </div>
         </div>
       </div>

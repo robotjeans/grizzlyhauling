@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
+import Footer from './Footer';
 import Header from './Header';
 import SEO from './SEO';
 
@@ -12,10 +13,8 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => {
     <>
       <SEO title={title} />
       <Header />
-      <main role="main" className="relative w-full flex-[1 0 auto]">
-        {children}
-      </main>
-      <footer></footer>
+      <main role="main">{children}</main>
+      <Footer />
     </>
   );
 };

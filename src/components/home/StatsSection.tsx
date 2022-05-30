@@ -23,9 +23,9 @@ const data = [
   },
 ];
 
-const StatsSection: FunctionComponent = ({ stats }: any) => {
+function StatsSection({ stats }: any) {
   return (
-    <section className="py-12 px-0 relative">
+    <section className="p-16 w-full relative">
       <div className="container">
         <div className="flex flex-wrap justify-center">
           {data.map((item: any, idx: Key) => {
@@ -49,6 +49,6 @@ const StatsSection: FunctionComponent = ({ stats }: any) => {
       </div>
     </section>
   );
-};
+}
 
 export default StatsSection;
