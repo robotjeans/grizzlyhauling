@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1,0,0,1,112.23,101.836)">
+            <text x="85.82px" y="98.82px" style="font-family:'Bangers-Regular', 'Bangers';font-size:144px;">GRIZZL<tspan x="410.396px " y="98.82px ">Y</tspan></text>
+        </g>
+        <g transform="matrix(0.523401,0,0,0.316259,161.569,158.106)">
+            <rect x="202.764" y="228.779" width="74.7" height="18.972"/>
+        </g>
+        <g transform="matrix(0.523037,0,0,0.316259,388.529,158.225)">
+            <rect x="202.764" y="228.779" width="74.7" height="18.972"/>
+        </g>
+        <g transform="matrix(1,0,0,1,12.7709,2.17281)">
+            <text x="304.979px" y="243.722px" style="font-family:'AvenirNext-Bold', 'Avenir Next', sans-serif;font-weight:700;font-size:36px;">HA<tspan x="358.079px 384.647px " y="243.722px 243.722px ">UL</tspan>ING</text>
+        </g>
+        <g transform="matrix(1,0,0,1,22.9075,-64.4939)">
+            <text x="234.633px" y="353.411px" style="font-family:'AvenirNext-Bold', 'Avenir Next', sans-serif;font-weight:700;font-size:36px;">JUNK<tspan x="333.849px " y="353.411px "> </tspan>REMO<tspan x="453.153px 476.625px 502.869px " y="353.411px 353.411px 353.411px ">VAL</tspan></text>
+        </g>
+    </g>
+</svg>
