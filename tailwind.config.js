@@ -6,12 +6,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'color-red': '#D22D40',
-      'color-slate': '#0A2533',
-      'color-offwhite': '#F7F5F0',
-      'color-black': '#050505',
-      'color-white': '#FFFFFF',
-      'color-gray': '#666666',
+      red: '#D22D40',
+      slate: '#0A2533',
+      offwhite: '#F7F5F0',
+      black: '#050505',
+      white: '#FFFFFF',
+      gray: '#666666',
       transparent: 'transparent',
     },
     container: {

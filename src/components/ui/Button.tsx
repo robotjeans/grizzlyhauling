@@ -3,12 +3,9 @@ import Spinner from '@/components/ui/Spinner';
 import { ButtonHTMLAttributes } from 'react';
 
 const variants = {
-  primary:
-    'bg-color-red text-color-white border border-color-red hover:opacity-75',
-  inverse:
-    'bg-color-white text-color-slate border border-color-slate hover:opacity-75',
-  secondary:
-    'bg-color-slate text-color-white border border-color-slate hover:opacity-75',
+  primary: 'bg-red text-white border border-color-red hover:opacity-75',
+  inverse: 'bg-white text-slate border border-color-slate hover:opacity-75',
+  secondary: 'bg-slate text-white border border-color-slate hover:opacity-75',
 };
 
 const sizes = {
