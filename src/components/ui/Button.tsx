@@ -3,9 +3,10 @@ import Spinner from '@/components/ui/Spinner';
 import { ButtonHTMLAttributes } from 'react';
 
 const variants = {
-  primary: 'bg-red text-white border border-color-red hover:opacity-75',
-  inverse: 'bg-white text-slate border border-color-slate hover:opacity-75',
-  secondary: 'bg-slate text-white border border-color-slate hover:opacity-75',
+  primary: 'bg-green text-black border-none hover:bg-blue',
+  inverse:
+    'bg-transparent text-blue border-blue hover:border-red hover:text-red',
+  secondary: 'bg-blue text-white border-none hover:bg-green',
 };
 
 const sizes = {
@@ -37,7 +38,7 @@ function Button({
     <button
       type={type}
       className={clsx(
-        'flex max-h-10 justify-center items-center disabled:bg-transparent disabled:opacity-70 disabled:cursor-not-allowed rounded-md font-normal focus:outline-none',
+        'flex max-h-10 justify-center items-center disabled:bg-transparent disabled:opacity-70 disabled:cursor-not-allowed rounded-sm font-bold focus:outline-none',
         variants[variant],
         sizes[size],
         className

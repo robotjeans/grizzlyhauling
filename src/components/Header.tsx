@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
-import LogoBlock from './shared/LogoBlock';
-import { useModal } from '@/hooks/useModal';
-import Modal from './ui/Modal';
 import ButtonLink from './ui/ButtonLink';
 
 /**
@@ -25,71 +23,61 @@ const data = {
 };
 
 function Header() {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const { scrollYProgress } = useViewportScroll();
 
-  const { toggleOpen, toggleClose, isOpen } = useModal();
-
-  const handleScroll = () => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () =>
-        setIsScrolled(window.pageYOffset > 264)
-      );
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const headerY = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.3],
+    ['-100%', '0%', '0%']
+  );
 
   return (
-    <div className="relative h-auto">
-      <header
-        className={clsx(
-          'z-50 text-base flex items-center fixed top-0 left-0 w-full h-[70px] md:h-[122px]',
-          isScrolled ? 'bg-color-white' : 'bg-transparent'
-        )}
-      >
-        <div className="container flex items-center justify-between text-base align-center">
-          <div className="flex-auto">
-            <Link href="/">
-              <a>
-                <Image
-                  src="/img/logo_text.svg"
-                  alt="Grizzly Hauling"
-                  width={48}
-                  height={48}
-                />
-              </a>
-            </Link>
-          </div>
-          <nav className="justify-center flex-auto hidden -ml-6 font-semibold md:flex align-center">
-            {data.header.menu_links.map(({ key }) => (
-              <li key={key} className="pl-6 first-of-type:pl-0">
-                <Link href={`/${key}`}>
-                  <a
-                    aria-label="services"
-                    className=" capitalize hover:opacity-75"
-                  >
-                    <span className="nav-link">{key}</span>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </nav>
-          <div className="items-center justify-end hidden space-x-4 lg:flex">
-            <ButtonLink href="tel:7579937283">(757) 993-7283</ButtonLink>
-            <div className="flex items-baseline space-x-4"></div>
-            <Button variant="secondary" onClick={toggleOpen}>
-              Book Now
-            </Button>
-          </div>
+    <motion.header
+      style={{
+        y: headerY,
+      }}
+      className={clsx(
+        'z-50 text-base flex items-center fixed top-0 left-0 w-full h-[70px] md:h-[122px] bg-black'
+      )}
+    >
+      <div className="container flex items-center justify-between text-base align-center">
+        <div className="flex-auto">
+          <Link href="/">
+            <a>
+              <Image
+                src="/img/grizzly_logo.png"
+                alt="Grizzly Hauling"
+                width={160}
+                height={100}
+              />
+            </a>
+          </Link>
         </div>
-      </header>
-      <Modal isOpen={isOpen} toggleClose={toggleClose}>
-        <div>Modal</div>
-      </Modal>
-    </div>
+        <nav className="justify-center flex-auto hidden -ml-6 font-semibold md:flex align-center">
+          {data.header.menu_links.map(({ key }) => (
+            <li key={key} className="pl-6 first-of-type:pl-0">
+              <Link href={`/${key}`}>
+                <a
+                  aria-label="services"
+                  className=" capitalize hover:opacity-75"
+                >
+                  <span className="nav-link">{key}</span>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </nav>
+        <div className="items-center justify-end hidden space-x-4 lg:flex">
+          <ButtonLink variant="primary" href="tel:7579937283">
+            (757) 993-7283
+          </ButtonLink>
+          <div className="flex items-baseline space-x-4"></div>
+          <Button variant="primary" onClick={() => {}}>
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </motion.header>
   );
 }
 

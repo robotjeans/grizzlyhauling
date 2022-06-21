@@ -9,18 +9,16 @@ function Footer() {
       <div className="container">
         <div className="flex-wrap justify-between -ml-8 lg:flex">
           <div className="pl-8 mb-12 lhs">
-            <div className="hidden relative md:block w-32 h-24">
-              <Link href="/">
-                <a>
-                  <Image
-                    src="/img/logo_stack_xl.svg"
-                    alt="Grizzly Logo Stack"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </a>
-              </Link>
-            </div>
+            <Link href="/">
+              <a className="hidden relative md:block">
+                <Image
+                  src="/img/logo_stack_xl.svg"
+                  alt="Grizzly Logo Stack"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </a>
+            </Link>
             <div className="w-48 text-base"></div>
             <ul className="inline-flex mt-4">
               {data.social.map(({ url, image, value }) => (
