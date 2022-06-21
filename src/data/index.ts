@@ -7,23 +7,18 @@ export const data = {
   social: [
     {
       url: 'https://www.facebook.com',
-      image: '/img/social_facebook.svg',
+      image: '/img/facebook-f-brands.svg',
       value: 'facebook',
     },
     {
       url: 'https://www.twitter.com',
-      image: '/img/social_twitter.svg',
+      image: '/img/twitter-brands.svg',
       value: 'twitter',
     },
     {
       url: 'https://www.instagram.com',
-      image: '/img/social_instagram.svg',
+      image: '/img/instagram-brands.svg',
       value: 'instagram',
-    },
-    {
-      url: 'https://www.google.com',
-      image: '/img/social_google.svg',
-      value: 'google',
     },
   ],
 };

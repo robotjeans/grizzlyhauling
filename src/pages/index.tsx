@@ -9,6 +9,9 @@ const Landing: NextPage = () => {
     <Layout>
       <HeroSection />
       <ServicesSection />
+      <section className="bg-white min-h-[600px]">
+        <div className="container">Social</div>
+      </section>
       <StatsSection />
     </Layout>
   );

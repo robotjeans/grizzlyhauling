@@ -25,7 +25,7 @@ const data = [
 
 function StatsSection({ stats }: any) {
   return (
-    <section className="p-16 w-full relative">
+    <section className="p-16 bg-green w-full relative">
       <div className="container">
         <div className="flex flex-wrap justify-center">
           {data.map((item: any, idx: Key) => {
